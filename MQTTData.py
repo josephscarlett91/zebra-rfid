@@ -11,8 +11,6 @@ import threading
 
 from ReaderData import *
 
-columns = ['CRC', 'PC', 'antenna', 'channel', 'eventNum', 'format', 'idHex', 'peakRssi', 
-                    'phase', 'reads', 'timestamp', 'type']
 
 
 def on_connect(client, userdata, flags, reason_code, properties):
@@ -69,6 +67,7 @@ def write_row_to_csv(row, file_path='tag_data.csv'):
         if write_header:
             writer.writeheader()
         writer.writerow(row)
+        print(row)
 
 
 
@@ -100,26 +99,33 @@ while True:
     
 
     if keyboard.is_pressed('1'):
-        print('starting..')
+        print('starting...')
         start_inventory()
     if keyboard.is_pressed('2'):
-        print('stopping..')
+        print('stopping inventory...')
         stop_inventory()
+        print('inventory stopped.')
 
     if keyboard.is_pressed('m'):
+        print('loading mode details...')
         print(get_mode())
-    if keyboard.is_pressed('n'):
-        set_mode()
 
     if keyboard.is_pressed('t'):
         type = input("input type: ")
-        change_type(type)
+        set_type(type)
 
     if keyboard.is_pressed('p'):
         power = int(input("input power: "))
-        change_power(power)
+        set_power(power)
+
+    if keyboard.is_pressed('a'):
+        antennas = input("input antennas in a comma separated list (eg. 1, 3, 4): ")
+        antennas_arr = list(map(int, antennas.split(', ')))
+        set_antennas(antennas)
+
 
     if keyboard.is_pressed('w'):
+        print('connecting...')
         connect_wifi()
 
     time.sleep(0.1)

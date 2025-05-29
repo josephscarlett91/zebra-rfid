@@ -20,7 +20,7 @@ global my_mode
 my_mode = copy.copy(MODE_TEMPLATE)
 
 def get_auth_header():
-    x = requests.get('https://fxr9005e7e5/cloud/localRestLogin', headers = HEADERS, verify = False)
+    x = requests.get('https://rfid/cloud/localRestLogin', headers = HEADERS, verify = False)
     data = x.json()
     token = data.get("message")
     
@@ -36,40 +36,44 @@ def get_adjusted_header():
 
 
 def start_inventory():
-    requests.put('https://fxr9005e7e5/cloud/start', headers = get_auth_header(), verify = False)
+    requests.put('https://rfid/cloud/start', headers = get_auth_header(), verify = False)
     
 
 def stop_inventory():
-    requests.put('https://fxr9005e7e5/cloud/stop', headers = get_auth_header(), verify = False)
+    requests.put('https://rfid/cloud/stop', headers = get_auth_header(), verify = False)
    
 def get_mode():
-    x = requests.get('https://fxr9005e7e5/cloud/mode', headers = get_auth_header(), verify = False)
+    x = requests.get('https://rfid/cloud/mode', headers = get_auth_header(), verify = False)
     return (x.json())
 
 def set_mode(mode_config):
-    requests.put('https://fxr9005e7e5/cloud/mode', headers = get_adjusted_header(), json = mode_config, verify = False)
+    requests.put('https://rfid/cloud/mode', headers = get_adjusted_header(), json = mode_config, verify = False)
 
 
-def change_type(type):
+def set_type(type):
     old_type = get_mode()['type']
     my_mode['type'] = type
     set_mode(my_mode)
     if (old_type != get_mode()['type']):
-        print(f"Successfuly changed type to {type}")
+        print(f"Successfuly set type to {type}")
     else:
-        print(f"Could not change type to {type}, invalid input. Try: ")
+        print(f"Could not set type to {type}, invalid input. Try: ")
         print("Simple \nInventory \nPortal \nConveyor \nCustom")
 
-def change_power(power):
+def set_power(power):
     my_mode['transmitPower'] = power
     set_mode(my_mode)
     if (0 <= power <= 33):
-        print(f"Successfuly changed power to {power}")
+        print(f"Successfuly set power to {power}")
     else:
-        print(f"Could not change power to {type}, invalid input. Input a number between 0 and 33.")
+        print(f"Could not set power to {type}, invalid input. Input a number between 0 and 33.")
+
+def set_antennas(antennas):
+    my_mode['antennas'] = antennas
+    set_mode(my_mode)
 
 def get_status():
-    x = requests.get('https://fxr9005e7e5/cloud/status', headers = get_auth_header(), verify = False)
+    x = requests.get('https://rfid/cloud/status', headers = get_auth_header(), verify = False)
     return (x.json())
 
 def connect_wifi():
@@ -89,4 +93,4 @@ def connect_wifi():
     "enable": True
   }
 }
-    requests.put('https://fxr9005e7e5/cloud/network', headers = get_adjusted_header(), json = network_config, verify = False)
+    requests.put('https://rfid/cloud/network', headers = get_adjusted_header(), json = network_config, verify = False)
