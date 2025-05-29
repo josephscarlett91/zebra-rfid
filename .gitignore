@@ -1,0 +1,36 @@
+
+inode_modules/
+.env
+dist/
+
+
+# Logs
+logs/
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+
+# Backup files
+*~
+*.swp
+
+
+# VS Code and PyCharm settings
+.vscode/
+.idea/
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+
+__pycache__/
+*.py[cod]
+.env
+.venv/
+
