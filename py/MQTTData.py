@@ -77,7 +77,7 @@ mqttc.on_message = on_message
 
 
 
-mqttc.connect("broker.emqx.io", 1883, 60)
+mqttc.connect("192.168.12.163", 1883, 60)
 
 
 
@@ -92,41 +92,63 @@ mqttc.loop_start()
 status_thread = threading.Thread(target=poll_reader_status, daemon=True)
 status_thread.start()
 
+
 while True:
-    if keyboard.is_pressed('q'):
+    cmd = input("enter cmd: ").strip()
+    if cmd == 'q':
         print("quitting")
         break
     
 
-    if keyboard.is_pressed('1'):
+    if cmd == '1':
         print('starting...')
         start_inventory()
-    if keyboard.is_pressed('2'):
+    if cmd == '2':
         print('stopping inventory...')
         stop_inventory()
         print('inventory stopped.')
 
-    if keyboard.is_pressed('m'):
+    if cmd == 'm':
         print('loading mode details...')
         print(get_mode())
 
-    if keyboard.is_pressed('t'):
+    if cmd == 't':
         type = input("input type: ")
         set_type(type)
 
-    if keyboard.is_pressed('p'):
+    if cmd == 'p':
         power = int(input("input power: "))
         set_power(power)
 
-    if keyboard.is_pressed('a'):
+    if cmd == 'a':
         antennas = input("input antennas in a comma separated list (eg. 1, 3, 4): ")
         antennas_arr = list(map(int, antennas.split(', ')))
         set_antennas(antennas)
 
 
-    if keyboard.is_pressed('w'):
+    if cmd == 'w':
         print('connecting...')
         connect_wifi()
+        
+    
+    if cmd == 'write':
+        target_epc = input("Enter target EPC (hex string): ").strip()
+        membank = input("Enter memory bank to write to (EPC, USER, TID, RESERVED): ").strip().upper()
+        data = input("Enter hex data to write (must be multiple of 4 hex chars): ").strip()
+
+        payload = {
+            "type": "WRITE",
+            "config": {
+                "membank": membank,
+                "wordPointer": 2,   # usually 2 to skip CRC/PC for EPC; you can adjust if needed
+                "data": data,
+                "blockSize": 0
+            },
+            "idHex": target_epc
+        }
+
+        mqttc.publish("GTI/Zebra/Testing", json.dumps(payload))
+        print(f"Write command sent to tag {target_epc} on memory bank {membank}")
 
     time.sleep(0.1)
 
