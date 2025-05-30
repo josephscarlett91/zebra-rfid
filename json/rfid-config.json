@@ -1,0 +1,331 @@
+{
+  "GPIO-LED": {},
+  "READER-GATEWAY": {
+    "batching": [
+      {
+        "maxPayloadSizePerReport": 0,
+        "reportingInterval": 0
+      },
+      {
+        "maxPayloadSizePerReport": 0,
+        "reportingInterval": 0
+      }
+    ],
+    "endpointConfig": {
+      "control": {
+        "commandResponse": {
+          "connections": [
+            {
+              "additionalOptions": {
+                "batching": null,
+                "retention": {
+                  "maxEventRetentionTimeInMin": 500,
+                  "maxNumEvents": 150000,
+                  "throttle": 100
+                }
+              },
+              "description": "local",
+              "name": "local",
+              "options": {
+                "additional": {
+                  "cleanSession": true,
+                  "clientId": "FXR9",
+                  "debug": false,
+                  "keepAlive": 60,
+                  "qos": 0,
+                  "reconnectDelay": 1,
+                  "reconnectDelayMax": 5
+                },
+                "enableSecurity": false,
+                "endpoint": {
+                  "hostName": "192.168.12.163",
+                  "port": 1883,
+                  "protocol": "tcp"
+                },
+                "publishTopic": [
+                  "GTI/Zebra/Testing"
+                ],
+                "subscribeTopic": [
+                  "GTI/Zebra/Testing"
+                ]
+              },
+              "type": "mqtt"
+            }
+          ]
+        }
+      },
+      "data": {
+        "batching": {
+          "maxPayloadSizePerReport": 0,
+          "reportingInterval": 0
+        },
+        "event": {
+          "connections": [
+            {
+              "additionalOptions": {
+                "batching": {
+                  "maxPayloadSizePerReport": 0,
+                  "reportingInterval": 0
+                },
+                "retention": {
+                  "maxEventRetentionTimeInMin": 0,
+                  "maxNumEvents": 0,
+                  "throttle": 1
+                }
+              },
+              "description": "local",
+              "name": "local",
+              "options": {
+                "additional": {
+                  "cleanSession": true,
+                  "clientId": "FXR9",
+                  "debug": false,
+                  "keepAlive": 60,
+                  "qos": 0,
+                  "reconnectDelay": 1,
+                  "reconnectDelayMax": 5
+                },
+                "enableSecurity": false,
+                "endpoint": {
+                  "hostName": "192.168.12.163",
+                  "port": 1883,
+                  "protocol": "tcp"
+                },
+                "publishTopic": [
+                  "GTI/Zebra/Testing"
+                ],
+                "subscribeTopic": []
+              },
+              "type": "mqtt"
+            },
+            {
+              "additionalOptions": {
+                "batching": {
+                  "maxPayloadSizePerReport": 0,
+                  "reportingInterval": 0
+                },
+                "retention": {
+                  "maxEventRetentionTimeInMin": 0,
+                  "maxNumEvents": 0,
+                  "throttle": 1
+                }
+              },
+              "description": "",
+              "name": "",
+              "options": {
+                "security": {
+                  "verifyPeer": false
+                }
+              },
+              "type": "WEBSOCKET"
+            }
+          ]
+        },
+        "retention": {
+          "maxEventRetentionTimeInMin": 0,
+          "maxNumEvents": 0,
+          "throttle": 1
+        }
+      },
+      "management": {
+        "commandResponse": {
+          "connections": [
+            {
+              "additionalOptions": {
+                "batching": null,
+                "retention": {
+                  "maxEventRetentionTimeInMin": 500,
+                  "maxNumEvents": 150000,
+                  "throttle": 100
+                }
+              },
+              "description": "loca",
+              "name": "local",
+              "options": {
+                "additional": {
+                  "cleanSession": true,
+                  "clientId": "FXR9",
+                  "debug": false,
+                  "keepAlive": 60,
+                  "qos": 0,
+                  "reconnectDelay": 1,
+                  "reconnectDelayMax": 5
+                },
+                "enableSecurity": false,
+                "endpoint": {
+                  "hostName": "192.168.12.163",
+                  "port": 1883,
+                  "protocol": "tcp"
+                },
+                "publishTopic": [
+                  "GTI/Zebra/Testing"
+                ],
+                "subscribeTopic": [
+                  "GTI/Zebra/Testing"
+                ]
+              },
+              "type": "mqtt"
+            }
+          ]
+        },
+        "event": {
+          "connections": [
+            {
+              "additionalOptions": {
+                "batching": null,
+                "retention": {
+                  "maxEventRetentionTimeInMin": 500,
+                  "maxNumEvents": 150000,
+                  "throttle": 100
+                }
+              },
+              "description": "",
+              "name": "",
+              "options": {
+                "additional": {
+                  "cleanSession": true,
+                  "clientId": "FXR9",
+                  "debug": false,
+                  "keepAlive": 60,
+                  "qos": 0,
+                  "reconnectDelay": 1,
+                  "reconnectDelayMax": 5
+                },
+                "enableSecurity": false,
+                "endpoint": {
+                  "hostName": "192.168.12.163",
+                  "port": 1883,
+                  "protocol": "tcp"
+                },
+                "publishTopic": [
+                  "GTI/Zebra/Testing"
+                ],
+                "subscribeTopic": []
+              },
+              "type": "mqtt"
+            }
+          ]
+        }
+      }
+    },
+    "managementEventConfig": {
+      "errors": {
+        "antenna": true,
+        "cpu": {
+          "reportIntervalInSec": 1800,
+          "threshold": 90
+        },
+        "database": true,
+        "flash": {
+          "reportIntervalInSec": 1800,
+          "threshold": 90
+        },
+        "ntp": true,
+        "radio": true,
+        "radio_control": true,
+        "ram": {
+          "reportIntervalInSec": 1800,
+          "threshold": 90
+        },
+        "reader_gateway": true,
+        "userApp": {
+          "reportIntervalInSec": 1800,
+          "threshold": 120
+        }
+      },
+      "gpiEvents": true,
+      "gpoEvents": true,
+      "heartbeat": {
+        "fields": {
+          "radio_control": [
+            "ANTENNAS"
+          ],
+          "reader_gateway": [
+            "NUM_DATA_MESSAGES_RXED",
+            "NUM_MANAGEMENT_EVENTS_TXED",
+            "NUM_DATA_MESSAGES_TXED",
+            "NUM_DATA_MESSAGES_RETAINED",
+            "NUM_DATA_MESSAGES_DROPPED",
+            "CPU",
+            "RAM",
+            "UPTIME",
+            "NUM_ERRORS",
+            "NUM_WARNINGS",
+            "INTERFACE_CONNECTION_STATUS",
+            "NOLOCKQ_DEPTH"
+          ],
+          "system": [
+            "CPU",
+            "FLASH",
+            "NTP",
+            "RAM",
+            "SYSTEMTIME",
+            "TEMPERATURE",
+            "UPTIME",
+            "GPO",
+            "GPI",
+            "POWER_NEGOTIATION",
+            "POWER_SOURCE",
+            "MAC_ADDRESS",
+            "HOSTNAME"
+          ],
+          "userDefined": {},
+          "userapps": [
+            "STATUS",
+            "CPU",
+            "RAM",
+            "UPTIME",
+            "NUM_DATA_MESSAGES_RXED",
+            "NUM_DATA_MESSAGES_TXED",
+            "INCOMING_DATA_BUFFER_PERCENTAGE_REMAINING",
+            "OUTGOING_DATA_BUFFER_PERCENTAGE_REMAINING"
+          ]
+        },
+        "interval": 30
+      },
+      "userappEvents": true,
+      "warnings": {
+        "cpu": {
+          "reportIntervalInSec": 1800,
+          "threshold": 80
+        },
+        "database": true,
+        "flash": {
+          "reportIntervalInSec": 1800,
+          "threshold": 80
+        },
+        "ntp": {
+          "reportIntervalInSec": 1800,
+          "threshold": 80
+        },
+        "radio_api": true,
+        "radio_control": true,
+        "ram": {
+          "reportIntervalInSec": 1800,
+          "threshold": 80
+        },
+        "reader_gateway": true,
+        "temperature": {
+          "ambient": 75,
+          "pa": 105
+        },
+        "userApp": {
+          "reportIntervalInSec": 1800,
+          "threshold": 60
+        }
+      }
+    },
+    "retention": [
+      {
+        "maxEventRetentionTimeInMin": -1,
+        "maxNumEvents": 0,
+        "throttle": 500
+      },
+      {
+        "maxEventRetentionTimeInMin": -1,
+        "maxNumEvents": 0,
+        "throttle": 500
+      }
+    ]
+  }
+}
