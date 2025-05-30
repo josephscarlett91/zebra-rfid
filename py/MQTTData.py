@@ -77,7 +77,7 @@ mqttc.on_message = on_message
 
 
 
-mqttc.connect("broker.emqx.io", 1883, 60)
+mqttc.connect("192.168.12.163", 1883, 60)
 
 
 

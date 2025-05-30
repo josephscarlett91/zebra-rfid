@@ -1,0 +1,28 @@
+Tag Log File created at 2025-05-30 10:01:14.603 
+
+Reader Information
+RFID (FXR9005E7E5) Information: 
+      Reader Connection Status: Connect    ReaderModel: FXR90-6    FirmwareVersion: 3.0.10    Country code: US/CA    Reader Serial Number: 24321523071253    Number Of Antennas: 6
+      Enabled Antennas: '5-6'
+      Trigger Settings:
+            Start Trigger Settings:    StartTriggerType: IMMEDIATE
+            Stop Trigger Settings:    StopTriggerType: IMMEDIATE
+            Report Trigger Settings:    Tag Report Trigger: 1
+            Autonomous Mode Settings:    Autonomous Mode Enabled: False
+      Antenna Singulation Settings
+            AntennaID: 5    Session: SESSION_S1    Tag Population: 1    TagTransitTIme: 0    PerformStateAwareSingulation: True    InventoryState: INVENTORY_STATE_AB_FLIP    SLFlag: SL_ALL
+            AntennaID: 6    Session: SESSION_S1    Tag Population: 1    TagTransitTIme: 0    PerformStateAwareSingulation: True    InventoryState: INVENTORY_STATE_AB_FLIP    SLFlag: SL_ALL
+      Antenna Power Settings
+            AntennaID: 5    AntennaPowerValue: 20dbm
+            AntennaID: 6    AntennaPowerValue: 20dbm
+
+Reader Summary
+Total Tag Reads: 4694    Total Unique Tag Reads: 2
+index, reader, unique reads, total reads, reads per second, Ant1, Ant2, Ant3, Ant4, Ant5, Ant6
+RFID, FXR9005E7E5, 2, 4694, 135, 0, 0, 0, 0, 2471, 2223
+
+Tag Summary
+EPC ID, Count, RSSI, Last Seen, 
+1111111111111111111111EF, 4528, -65, 2025-05-30 09:47:02, 
+1111111111111111111111EE, 166, -65, 2025-05-30 09:47:01, 
+
