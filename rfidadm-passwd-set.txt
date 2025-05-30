@@ -1,0 +1,1 @@
+{"header":{"RPC":"updatePassword","MsgType":"REQ","ReqToken":"123461","Requester":"web app"},"payload":{"userName":"rfidadm","oldPassword":"","newPassword":"Gti2025@"}}
