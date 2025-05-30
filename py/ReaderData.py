@@ -20,7 +20,7 @@ global my_mode
 my_mode = copy.copy(MODE_TEMPLATE)
 
 def get_auth_header():
-    x = requests.get('https://rfid/cloud/localRestLogin', headers = HEADERS, verify = False)
+    x = requests.get('https://169.254.231.229/cloud/localRestLogin', headers = HEADERS, verify = False)
     data = x.json()
     token = data.get("message")
     
@@ -36,18 +36,18 @@ def get_adjusted_header():
 
 
 def start_inventory():
-    requests.put('https://rfid/cloud/start', headers = get_auth_header(), verify = False)
+    requests.put('https://169.254.231.229/cloud/start', headers = get_auth_header(), verify = False)
     
 
 def stop_inventory():
-    requests.put('https://rfid/cloud/stop', headers = get_auth_header(), verify = False)
+    requests.put('https://169.254.231.229/cloud/stop', headers = get_auth_header(), verify = False)
    
 def get_mode():
-    x = requests.get('https://rfid/cloud/mode', headers = get_auth_header(), verify = False)
+    x = requests.get('https://169.254.231.229/cloud/mode', headers = get_auth_header(), verify = False)
     return (x.json())
 
 def set_mode(mode_config):
-    requests.put('https://rfid/cloud/mode', headers = get_adjusted_header(), json = mode_config, verify = False)
+    requests.put('https://169.254.231.229/cloud/mode', headers = get_adjusted_header(), json = mode_config, verify = False)
 
 
 def set_type(type):
@@ -73,7 +73,7 @@ def set_antennas(antennas):
     set_mode(my_mode)
 
 def get_status():
-    x = requests.get('https://rfid/cloud/status', headers = get_auth_header(), verify = False)
+    x = requests.get('https://169.254.231.229/cloud/status', headers = get_auth_header(), verify = False)
     return (x.json())
 
 def connect_wifi():
@@ -93,4 +93,4 @@ def connect_wifi():
     "enable": True
   }
 }
-    requests.put('https://rfid/cloud/network', headers = get_adjusted_header(), json = network_config, verify = False)
+    requests.put('https://169.254.231.229/cloud/network', headers = get_adjusted_header(), json = network_config, verify = False)
