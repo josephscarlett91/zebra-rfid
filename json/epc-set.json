@@ -1,0 +1,30 @@
+{
+    "type": "CUSTOM",
+    "query": {
+        "tagpopulation": 10,
+        "sel": "ALL",
+        "session": "S1",
+        "target": "A"
+    },
+    "selects": [
+        {
+        "target": "S1",
+        "action": "INVB_INVA",
+        "membank": "TID",
+        "pointer": 0,
+        "length": 96,
+        "mask": "E280110020005B4B84CA088D"
+        }
+    ],
+    "accesses": [
+        {
+        "type": "WRITE",
+        "config": {
+        "membank": "EPC",
+        "wordPointer": 2,
+        "data": "98003480000000000076a282"
+        }
+        }
+    ]
+
+}
