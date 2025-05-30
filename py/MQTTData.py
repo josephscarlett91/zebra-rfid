@@ -116,7 +116,7 @@ while True:
         print('connecting...')
         connect_wifi()
         
-    
+    # does not work
     if cmd == 'write':
         target_epc = input("Enter target EPC (hex string): ").strip()
         membank = input("Enter memory bank to write to (EPC, USER, TID, RESERVED): ").strip().upper()
