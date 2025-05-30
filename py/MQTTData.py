@@ -29,6 +29,9 @@ def on_message(client, userdata, msg):
 
     decoded = msg.payload.decode('utf-8')
     data_dict = json.loads(decoded)
+    
+    if data_dict.get("type") == "heartbeat":
+        return
 
     
     df = pd.DataFrame(data_dict)
