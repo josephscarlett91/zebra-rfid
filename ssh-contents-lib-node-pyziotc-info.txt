@@ -1,0 +1,92 @@
+rfidadm@RFID:/platform/lib$ ls
+libaidc.so  libdcruntime.so.2.4  libnge.so  libziotc.so  pyziotc.so  ziotc.node
+rfidadm@RFID:/platform/lib$ python3
+Python 3.10.4 (main, Mar 23 2022, 20:25:24) [GCC 11.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pyziotec
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'pyziotec'
+>>> import sys
+>>> sys.path.insert(0,"/platform/lib")
+>>> import pyziotc
+>>> dir(pyziotc)
+['CONNECT_FOR_DIRECTIONALITY_DATA', 'CONNECT_FOR_RADIO_DATA', 'CONNECT_TO_NOTHING', 'MSG_IN_BEARING', 'MSG_IN_BIN', 'MSG_IN_GPI', 'MSG_IN_JSON', 'MSG_OUT_CTRL', 'MSG_OUT_DATA', 'MSG_OUT_GPO', 'Ziotc', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'version']
+>>> help(pyziotc)
+
+>>> import inspect
+>>> for name in dir(pyziotc):
+...     obj = getattr(pyziotc,name)
+...     print(f"{name}:{inspect.signature(obj)}")
+...
+Traceback (most recent call last):
+  File "<stdin>", line 3, in <module>
+  File "/usr/lib/python3.10/inspect.py", line 3247, in signature
+    return Signature.from_callable(obj, follow_wrapped=follow_wrapped,
+  File "/usr/lib/python3.10/inspect.py", line 2995, in from_callable
+    return _signature_from_callable(obj, sigcls=cls,
+  File "/usr/lib/python3.10/inspect.py", line 2392, in _signature_from_callable
+    raise TypeError('{!r} is not a callable object'.format(obj))
+TypeError: 2 is not a callable object
+>>> getattr(pyziotc,name)
+2
+>>> print(pyziotc.__doc__)
+ziotc python module
+>>> print(pyziotc.__file__)
+/platform/lib/pyziotc.so
+>>> pyziotc._read()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'ziotc' has no attribute '_read'
+>>> return pyziotc._read()
+  File "<stdin>", line 1
+SyntaxError: 'return' outside function
+>>> print(pyziotc.__name__)
+ziotc
+>>> print(pyziotc.__package__)
+
+>>> print(pyziotc.__spec__)
+ModuleSpec(name='pyziotc', loader=<_frozen_importlib_external.ExtensionFileLoader object at 0xffffaba27c40>, origin='/platform/lib/pyziotc.so')
+>>> print(pyziotc.__loader__)
+<_frozen_importlib_external.ExtensionFileLoader object at 0xffffaba27c40>
+>>> exit
+Use exit() or Ctrl-D (i.e. EOF) to exit
+>>> exit()
+rfidadm@RFID:/platform/lib$ ls
+libaidc.so  libdcruntime.so.2.4  libnge.so  libziotc.so  pyziotc.so  ziotc.node
+rfidadm@RFID:/platform/lib$ np
+npm              nproc            nproc.coreutils  npx
+rfidadm@RFID:/platform/lib$ node
+Welcome to Node.js v16.11.1.
+Type ".help" for more information.
+> console.log("test")
+test
+undefined
+> const libzio = require('/platform/lib/ziotc.node');
+undefined
+> console.log(libzio)
+{
+  Run: [Function (anonymous)],
+  Stop: [Function (anonymous)],
+  SendNextMsg: [Function (anonymous)],
+  SendResponse: [Function (anonymous)],
+  EnableGPIEvents: [Function (anonymous)],
+  DisableGPIEvents: [Function (anonymous)],
+  Version: [Function (anonymous)],
+  SetDataSource: [Function (anonymous)],
+  MSG_OUT_DATA: 3,
+  MSG_OUT_CTRL: 4,
+  MSG_OUT_GPO: 5,
+  MSG_IN_JSON: 0,
+  MSG_IN_GPI: 6
+}
+undefined
+> exit
+Uncaught ReferenceError: exit is not defined
+> quit
+Uncaught ReferenceError: quit is not defined
+> end
+Uncaught ReferenceError: end is not defined
+> .exit
+rfidadm@RFID:/platform/lib$ ls
+libaidc.so  libdcruntime.so.2.4  libnge.so  libziotc.so  pyziotc.so  ziotc.node
