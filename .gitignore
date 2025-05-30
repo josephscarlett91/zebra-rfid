@@ -1,19 +1,9 @@
-
-inode_modules/
-.env
-dist/
-
-
-# Logs
-logs/
-*.log
-
 # OS junk
 .DS_Store
-Thumbs.db
+._*
 
-
-# Backup files
+# Bac
+kup files
 *~
 *.swp
 
@@ -25,12 +15,5 @@ Thumbs.db
 # Virtual environments
 venv/
 .venv/
-env/
-.env/
-
-
 __pycache__/
-*.py[cod]
-.env
-.venv/
 

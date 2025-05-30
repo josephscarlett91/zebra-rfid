@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+CMD="curl -s -k -X"
+JQ="jq -r"
+#URL="https://RFID/cloud"
+URL="https://169.254.231.229/cloud"
+AUT="Authorization: Basic YWRtaW46R3RpMjAyNUA="
+MIM="accept: application/json"
+
+# Get token
+TOK=$($CMD 'GET' "$URL/localRestLogin" -H "$MIM" -H "$AUT" | $JQ '.message')
+AB="Authorization: Bearer $TOK"
+
+# Args
+met="$1"
+end="$2"
+key="$3"
+json="$4"
+
+# Auto-detect if JSON file was passed as $3
+if [[ -f "$key" && -z "$json" ]]; then
+  json="$key"
+  key=""
+fi
+
+# Call the API
+if [ -n "$json" ]; then
+  curl -s -k -X "$met" "$URL/$end" \
+    -H "$MIM" \
+    -H "$AB" \
+    -H "Content-Type: application/json" \
+    -d @"$json"
+elif [ -n "$key" ]; then
+  curl -s -k -X "$met" "$URL/$end" -H "$MIM" -H "$AB" | $JQ "$key"
+else
+  curl -s -k -X "$met" "$URL/$end" -H "$MIM" -H "$AB"
+fi
+
