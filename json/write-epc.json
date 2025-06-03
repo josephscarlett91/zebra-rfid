@@ -1,0 +1,1 @@
+{"accesses":[{"config":{"data":"1111111111111111111111ff","membank":"EPC","wordPointer":2},"type":"WRITE"}],"filter":{"match":"prefix","operation":"include","value":"1111111111111111111100EF"},"radioStopConditions":{"duration":1000,"tagCount":1},"type":"CUSTOM"}

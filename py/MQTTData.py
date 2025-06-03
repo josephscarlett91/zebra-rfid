@@ -72,7 +72,7 @@ mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 mqttc.on_connect = on_connect
 mqttc.on_message = on_message
 
-mqttc.connect("192.168.12.163", 1883, 60)
+mqttc.connect("192.168.12.19", 1883, 60)
 
 mqttc.loop_start()
 

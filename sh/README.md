@@ -8,6 +8,12 @@ $ ./zrfid GET network
 install jq to pretty print output of json
 $ ./zrfid GET network | jq
 
+# Connect to Hotspot
+get ip address
+$ ip a 
+
+configure endpoint to ip location 
+
 # Start APP 
 run command in cli to begin app or stop
 modify filter to alter a prefix to read
