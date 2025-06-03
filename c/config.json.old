@@ -1,0 +1,1 @@
+{"antennaStopCondition":[{"type":"DURATION","value":100},{"type":"DURATION","value":100}],"antennas":[5,6],"delayBetweenAntennaCycles":{"duration":0,"type":"DISABLED"},"filter":{"match":"prefix","operation":"include","value":"111111"},"reportFilter":{"duration":1,"type":"RADIO_WIDE"},"tagMetaData":["RSSI","CHANNEL"],"transmitPower":[25,25],"type":"CUSTOM"}
