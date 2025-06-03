@@ -1,0 +1,23 @@
+{
+  "READER-GATEWAY": {
+    "endpointConfig": {
+      "data": {
+        "event": {
+          "connections": [
+            {
+              "options": {
+                "URL": "https://webhook.site/be9d3ddc-c25d-4b87-b4c4-9162f9c75768",
+                "security": {
+                  "authenticationType": "NONE",
+                  "verifyHost": false,
+                  "verifyPeer": false
+                }
+              },
+              "type": "httpPost"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
