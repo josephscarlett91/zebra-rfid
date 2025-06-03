@@ -1,0 +1,30 @@
+{
+  "READER-GATEWAY": {
+    "endpointConfig": {
+      "data": {
+        "event": {
+          "connections": [
+            {
+              "additionalOptions": {
+                "retention": {
+                  "maxEventRetentionTimeInMin": 500,
+                  "maxNumEvents": 150000,
+                  "throttle": 100
+                }
+              },
+              "description": "WEBSOCKET_TEST",
+              "name": "WEBSOCKET_TEST",
+              "options": {
+                "security": {
+                  "verifyHost": true,
+                  "verifyPeer": true
+                }
+              },
+              "type": "WEBSOCKET"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

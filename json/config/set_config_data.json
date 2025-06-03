@@ -1,0 +1,143 @@
+{
+  "READER-GATEWAY": {
+    "endpointConfig": {
+      "control": {
+        "commandResponse": {
+          "connections": [
+            {
+              "description": "MQTT_TEST",
+              "name": "MQTT_TEST",
+              "options": {
+                "additional": {
+                  "cleanSession": true,
+                  "clientId": "EV1",
+                  "debug": false,
+                  "keepAlive": 60,
+                  "qos": 0,
+                  "reconnectDelay": 1,
+                  "reconnectDelayMax": 5
+                },
+                "enableSecurity": false,
+                "endpoint": {
+                  "hostName": "10.117.229.9",
+                  "port": 1883,
+                  "protocol": "tcp"
+                },
+                "publishTopic": [
+                  "responses_r2c_229_151"
+                ],
+                "security": {
+                  "CACertificateFileLocation": "/home/root/broker.emqx.io-ca.crt",
+                  "installedCertificateName": "Server",
+                  "installedCertificateType": "server",
+                  "keyAlgorithm": "RS256",
+                  "keyFormat": "PEM",
+                  "verifyHostName": false,
+                  "verifyPeer": false
+                },
+                "subscribeTopic": [
+                  "commands_r2c_229_151"
+                ]
+              },
+              "type": "mqtt"
+            }
+          ],
+          "enableLocalRest": true
+        }
+      },
+      "data": {
+        "event": {
+          "connections": [
+            {
+              "additionalOptions": {
+                "batching": null,
+                "retention": {
+                  "maxEventRetentionTimeInMin": 500,
+                  "maxNumEvents": 150000,
+                  "throttle": 500
+                }
+              },
+              "description": "MQTT_TEST",
+              "name": "MQTT_TEST",
+              "options": {
+                "additional": {
+                  "cleanSession": true,
+                  "clientId": "EV1",
+                  "debug": false,
+                  "keepAlive": 60,
+                  "qos": 0,
+                  "reconnectDelay": 1,
+                  "reconnectDelayMax": 5
+                },
+                "enableSecurity": false,
+                "endpoint": {
+                  "hostName": "10.117.229.9",
+                  "port": 1883,
+                  "protocol": "tcp"
+                },
+                "publishTopic": [
+                  "tagevents_r2c_longrun"
+                ],
+                "security": {
+                  "CACertificateFileLocation": "/home/root/broker.emqx.io-ca.crt",
+                  "installedCertificateName": "Server",
+                  "installedCertificateType": "server",
+                  "keyAlgorithm": "RS256",
+                  "keyFormat": "PEM",
+                  "verifyHostName": false,
+                  "verifyPeer": false
+                },
+                "subscribeTopic": []
+              },
+              "type": "mqtt"
+            }
+          ]
+        }
+      },
+      "management": {
+        "commandResponse": {
+          "connections": [
+            {
+              "description": "MQTT_TEST",
+              "name": "MQTT_TEST",
+              "options": {
+                "additional": {
+                  "cleanSession": true,
+                  "clientId": "EV1",
+                  "debug": false,
+                  "keepAlive": 60,
+                  "qos": 0,
+                  "reconnectDelay": 1,
+                  "reconnectDelayMax": 5
+                },
+                "enableSecurity": false,
+                "endpoint": {
+                  "hostName": "10.117.229.9",
+                  "port": 1883,
+                  "protocol": "tcp"
+                },
+                "publishTopic": [
+                  "responses_r2c_229_151"
+                ],
+                "security": {
+                  "CACertificateFileLocation": "/home/root/broker.emqx.io-ca.crt",
+                  "installedCertificateName": "Server",
+                  "installedCertificateType": "server",
+                  "keyAlgorithm": "RS256",
+                  "keyFormat": "PEM",
+                  "verifyHostName": false,
+                  "verifyPeer": false
+                },
+                "subscribeTopic": [
+                  "commands_r2c_229_151"
+                ]
+              },
+              "type": "mqtt"
+            }
+          ],
+          "enableLocalRest": true
+        }
+      }
+    }
+  }
+}

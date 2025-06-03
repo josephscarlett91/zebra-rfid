@@ -1,0 +1,46 @@
+{
+  "READER-GATEWAY": {
+    "endpointConfig": {
+      "data": {
+        "event": {
+          "connections": [
+            {
+              "additionalOptions": {
+                "batching": null,
+                "retention": {
+                  "maxEventRetentionTimeInMin": 500,
+                  "maxNumEvents": 150000,
+                  "throttle": 100
+                }
+              },
+              "description": "mqtt_data_public_emqx",
+              "name": "mqtt_emqx_data",
+              "options": {
+                "additional": {
+                  "cleanSession": true,
+                  "clientId": "fxr90-reader",
+                  "debug": false,
+                  "keepAlive": 60,
+                  "qos": 0,
+                  "reconnectDelay": 1,
+                  "reconnectDelayMax": 5
+                },
+                "enableSecurity": false,
+                "endpoint": {
+                  "hostName": "broker.emqx.io",
+                  "port": 8083,
+                  "protocol": "ws"
+                },
+                "publishTopic": [
+                  "/devices/fxr90-reader/events/data"
+                ],
+                "subscribeTopic": []
+              },
+              "type": "mqtt"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
