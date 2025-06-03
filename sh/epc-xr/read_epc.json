@@ -1,0 +1,1 @@
+{"accesses":[{"config":{"membank":"TID","wordCount":0,"wordPointer":0},"type":"READ"}],"filter":{"match":"prefix","operation":"include","value":"AAAAAAAAAAAAAAAAAAAAAA11"},"radioStopConditions":{"duration":1000,"tagCount":1},"type":"CUSTOM"}

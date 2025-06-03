@@ -1,0 +1,1 @@
+{"command": "set_mode", "command_id": 16266718797272556, "payload": {"accesses":[{"config":{"data":"E2801191A5030069BB92B1A1","membank":"EPC","wordPointer":2},"type":"WRITE"}],"filter":{"match":"prefix","operation":"include","value":"AAAAAAAAAAAAAAAAAAAAAA11"},"radioStopConditions":{"duration":1000,"tagCount":1},"type":"CUSTOM"}}

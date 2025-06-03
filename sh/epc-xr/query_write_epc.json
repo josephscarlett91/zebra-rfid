@@ -1,0 +1,1 @@
+{"query":{"tagPopulation":10,"sel":"ALL","session":"S0","target":"AB"},"accesses":[{"config":{"data":"E2801191A5030069BB92B1A1","membank":"EPC","wordPointer":2},"type":"WRITE"}],"selects":[{"target":"S0","action":"INVB_INVA","membank":"TID","pointer":0,"length":96,"mask":"AAAAAAAAAAAAAAAAAAAAAA11"}],"radioStopConditions":{"duration":1000,"tagCount":1},"type":"CUSTOM"}
